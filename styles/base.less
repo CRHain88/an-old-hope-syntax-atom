@@ -6,14 +6,17 @@ atom-text-editor {
 
   .wrap-guide {
     background-color: @syntax-wrap-guide-color;
+    opacity: .2;
   }
 
   .indent-guide {
     color: @syntax-indent-guide-color;
+    opacity: .4;
   }
 
   .invisible-character {
     color: @syntax-invisible-character-color;
+    opacity: .4;
   }
 
   .gutter {
@@ -90,6 +93,18 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     color: @vader;
   }
 
+  &.syntax--new {
+    color: @yoda;
+  }
+
+  &.syntax--comparison {
+    color: @luke;
+  }
+
+  &.syntax--relational {
+    color: @luke;
+  }
+
   &.syntax--other.syntax--special-method {
     color: @luke;
   }
@@ -112,6 +127,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--type {
     color: @very-light-grey;
+    color: @vader;
 
     &.syntax--class {
       color: @yoda;
@@ -127,6 +143,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
     &.syntax--const {
       color: @vader;
+    }
+
+    &.syntax--extends {
+      color: @very-light-grey;
+      font-style: italic;
     }
   }
 
@@ -186,6 +207,14 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--link {
     color: @vader;
   }
+
+  &.syntax--quasi .syntax--quasi {
+      .syntax--string,
+      .syntax--variable,
+      .syntax--punctuation {
+          color: @syntax-text-color;
+      }
+  }
 }
 
 .syntax--punctuation {
@@ -220,10 +249,13 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     }
   }
 
+  &.syntax--separator {
+      color: @luke;
+  }
+
   &.syntax--section.syntax--embedded {
     color: @very-light-grey;
   }
-
 }
 
 .syntax--support {
@@ -237,6 +269,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     &.syntax--any-method {
       color: @threepio;
     }
+  }
+
+  &.syntax--property-name {
+    color: @luke;
   }
 }
 
@@ -263,6 +299,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     &.syntax--id {
       color: @yoda;
     }
+
+    + .syntax--assignment {
+        color: darken(@threepio, 20%);
+    }
   }
 }
 
@@ -286,6 +326,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--separator {
     background-color: @grey;
     color: @syntax-text-color;
+  }
+
+  &.syntax--delimiter {
+      color: @syntax-text-color;
   }
 }
 
@@ -358,6 +402,19 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--punctuation {
     color: @yoda;
   }
+}
+
+.syntax--jsx {
+    .syntax--component {
+        color: @vader;
+    }
+
+    .syntax--tag,
+    .syntax--accessor,
+    .syntax--terminator,
+    .syntax--meta.syntax--brace {
+        color: @syntax-text-color;
+    }
 }
 
 atom-text-editor[mini] .scroll-view {
